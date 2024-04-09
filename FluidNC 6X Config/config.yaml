@@ -128,6 +128,7 @@ axes:
 #        direction_pin: I2SO.4
 #        disable_pin: I2SO.7
 
+# B axis used for RapidChange dust cover stepper driver
   b:
     steps_per_mm: 50.000
     max_rate_mm_per_min: 2500.000
@@ -230,10 +231,6 @@ H100:
 #uart_channel2:
 #  report_interval_ms: 100
 #  uart_num: 2
-
-Macros:
-  macro0: $SD/Run=/Macros/Drop-shoe.g
-  macro1: $SD/Run=/Macros/Pickup-Shoe.g
 
 # Spindle spins 100RPM low at slow speeds
 RapidChange:
