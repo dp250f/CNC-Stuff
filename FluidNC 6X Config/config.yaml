@@ -81,7 +81,7 @@ axes:
     max_travel_mm: 114.000
     soft_limits: true
     homing:
-      cycle: 2
+      cycle: 1
       positive_direction: true
       mpos_mm: 114.000
       feed_mm_per_min: 100.000
@@ -108,7 +108,7 @@ axes:
 #    max_travel_mm: 960.000
 #    soft_limits: false
 #    homing:
-#      cycle: 3
+#      cycle: 2
 #      positive_direction: false
 #      mpos_mm: 0.000
 #      feed_mm_per_min: 100.000
@@ -136,7 +136,7 @@ axes:
     max_travel_mm: 35.000
     soft_limits: false
     #homing:
-    #  cycle: 1
+    #  cycle: 2
     #  positive_direction: false
     #  mpos_mm: 0.000
     #  feed_mm_per_min: 100.000
@@ -175,7 +175,7 @@ sdcard:
 # Pins 2 and 26 do not have hardware pullup resistors, so do it in the ESP32
 probe:
   pin: gpio.26:low:pu
-#  toolsetter_pin: gpio.26:low:pu
+  toolsetter_pin: NO_PIN
   check_mode_start: true
 
 # Pins 2 and 26 do not have hardware pullup resistors, so do it in the ESP32
