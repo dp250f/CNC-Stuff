@@ -116,7 +116,7 @@ properties = {
     description: "Unload tool after last operation",
     group      : "preferences",
     type       : "boolean",
-    value      : true,
+    value      : false,
     scope      : "post"
   },
   splitFile: {
@@ -137,7 +137,7 @@ properties = {
     description: "Uses G30 to load/unload dust boot automatically. G28 Z0 must be set to most retracted position!!! Set G30 to dock center location",
     group      : "Dust Boot",
     type       : "boolean",
-    value      : true,
+    value      : false,
     scope      : "post"
   },
   dustBootParkingClearance: {
