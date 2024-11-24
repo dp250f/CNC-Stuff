@@ -11,6 +11,7 @@ axes:
   shared_stepper_disable_pin: NO_PIN
   x:
     steps_per_mm: 320.000
+    # It will do 7600 on its own
     max_rate_mm_per_min: 5000.000
     acceleration_mm_per_sec2: 300.000
     max_travel_mm: 425.000
@@ -38,7 +39,8 @@ axes:
 
   y:
     steps_per_mm: 320.000
-    max_rate_mm_per_min: 4000.000
+    # It will do 5600 on its own
+    max_rate_mm_per_min: 4500.000
     acceleration_mm_per_sec2: 300.000
     max_travel_mm: 470.000
     soft_limits: true
@@ -76,7 +78,8 @@ axes:
 
   z:
     steps_per_mm: 800.000
-    max_rate_mm_per_min: 1500.000
+    # It will do 2600 on its own
+    max_rate_mm_per_min: 2000.000
     acceleration_mm_per_sec2: 200.000
     max_travel_mm: 114.000
     soft_limits: true
@@ -132,7 +135,7 @@ axes:
   b:
     steps_per_mm: 50.000
     max_rate_mm_per_min: 2500.000
-    acceleration_mm_per_sec2: 200.000
+    acceleration_mm_per_sec2: 300.000
     max_travel_mm: 35.000
     soft_limits: false
     #homing:
