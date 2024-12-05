@@ -206,6 +206,8 @@ o50 else
 
 		#<_rc_times_plunged> = 0
 		o410 while [#<_rc_times_plunged> LT #<_rc_plunge_count>]
+			(debug, Give the spindle time to spin up)
+			G4 P0.5
 			G53 G1 Z[#<_rc_engage_z>] F[#<_rc_engage_feed>]
 			(debug, Engage)
 			G53 G1 Z[#<_rc_engage_z> + #<_rc_z_retreat_off>] F[#<_rc_engage_feed>]

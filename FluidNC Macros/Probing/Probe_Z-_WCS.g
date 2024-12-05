@@ -7,6 +7,7 @@
 ; Save current modals
 #<units_mode> = #<_metric>
 #<distance_mode> = #<_incremental>
+#<wcs_num> = [#<_coord_system> / 10 ]
 
 ; Set macro modals
 G91 ; Set incremental
@@ -28,17 +29,16 @@ G4 P0.25
 ;#<probed_away> = #5063 ; save the probe location
 ;(print, Probe away Z value: #<probed_away>)
 
+; Return to starting position
+G90 G0 Z#<saved_z>
+
 ; Compute average probed value
 ;#<probed_average> = [[#<probed_toward> + #<probed_away>] / 2]
-#<probed_average> = [#<probed_toward> - 0.1] ; take into account the difference between when the toolsetter triggers with the probe vs a tool
-#<wcs_num> = [#<_coord_system> / 10 ]
+#<probed_average> = #<probed_toward>
 
 ; Set workspace Z0 using the average value
 (print, Saving average probed G%.1f#<wcs_num>  Z offset: %f#<probed_average>)
 G10 L2 Z#<probed_average>
-
-; Return to starting position
-G90 G0 Z#<saved_z>
 
 ; Restore modals
 G[90 + #<distance_mode>] ; restore the distance mode
