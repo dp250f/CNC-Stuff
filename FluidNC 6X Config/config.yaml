@@ -1,11 +1,12 @@
 board: Fluid NC 6x CNC Controller
 name: FoxAlien Vasto
 stepping:
-  engine: I2S_STREAM
+  engine: I2S_STATIC
   idle_ms: 255
   pulse_us: 4
-  dir_delay_us: 0
+  dir_delay_us: 4
   disable_delay_us: 0
+  segments: 6
 
 axes:
   shared_stepper_disable_pin: NO_PIN
@@ -62,7 +63,8 @@ axes:
       pulloff_mm: 1.000
       standard_stepper:
         step_pin: I2SO.18
-        direction_pin: I2SO.17
+        direction_pin: I2SO.17:low
+        # direction_pin: I2SO.17
         disable_pin: I2SO.16
 
     motor1:
