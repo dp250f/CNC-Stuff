@@ -25,16 +25,17 @@ G38.2 F#<probe_feed> Z[0 - #<probe_dist>]
 G4 P0.25
 
 ; Probe away
-;G38.4 F#<probe_feed> Z1.0
-;#<probed_away> = #5063 ; save the probe location
+G38.4 F#<probe_feed> Z1.0
+#<probed_away> = #5063 ; save the probe location
 ;(print, Probe away Z value: #<probed_away>)
 
 ; Return to starting position
 G90 G0 Z#<saved_z>
 
 ; Compute average probed value
-;#<probed_average> = [[#<probed_toward> + #<probed_away>] / 2]
-#<probed_average> = #<probed_toward>
+#<probed_average> = [[#<probed_toward> + #<probed_away>] / 2]
+; compensate for difference between when TLO is measured for probe vs solid tool
+#<probed_average> = [#<probed_average> + 0.075]
 
 ; Set workspace Z0 using the average value
 (print, Saving average probed G%.1f#<wcs_num>  Z offset: %f#<probed_average>)
